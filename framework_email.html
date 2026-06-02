@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Agent Session Persistence Framework</title>
+</head>
+<body style="margin:0; padding:0; font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #0f0f1a; color: #e0e0e0;">
+
+<!-- Outer wrapper -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);">
+<tr><td align="center" style="padding: 40px 20px;">
+
+<!-- Main container -->
+<table role="presentation" width="700" cellpadding="0" cellspacing="0" style="max-width: 700px; background: #1a1a2e; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+
+<!-- Header -->
+<tr>
+<td style="padding: 50px 40px 40px; text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+<h1 style="margin: 0; font-size: 32px; font-weight: 800; color: #ffffff; letter-spacing: -0.5px;">AI Agent Memory Framework</h1>
+<p style="margin: 12px 0 0; font-size: 16px; color: rgba(255,255,255,0.85);">How to stop LLM agents from forgetting everything</p>
+</td>
+</tr>
+
+<!-- Problem Statement -->
+<tr>
+<td style="padding: 35px 40px 20px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+<tr><td style="border-left: 4px solid #ff6b6b; padding: 20px 24px; background: rgba(255,107,107,0.08); border-radius: 0 8px 8px 0;">
+<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #ff9a9a;">
+<strong style="color: #ff6b6b;">The Problem:</strong> LLMs are stateless. Each session starts blank. Without scaffolding, agents <em>hallucinate context</em>, lose track of work, forget tools, and waste tokens re-learning what they already know.
+</p>
+</td></tr>
+</table>
+</td>
+</tr>
+
+<!-- Solution Overview -->
+<tr>
+<td style="padding: 25px 40px 15px;">
+<h2 style="margin: 0 0 20px; font-size: 22px; color: #ffffff;">The Solution: Three-Layer Memory System</h2>
+<p style="margin: 0; font-size: 14px; line-height: 1.6; color: #b0b0c0;">A lightweight (< 4,000 tokens) system that gives agents persistent memory across sessions, dramatically reducing hallucinations and wasted context.</p>
+</td>
+</tr>
+
+<!-- Layer 1 -->
+<tr>
+<td style="padding: 15px 40px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, rgba(102,126,234,0.12) 0%, rgba(102,126,234,0.04) 100%); border: 1px solid rgba(102,126,234,0.25); border-radius: 12px;">
+<tr><td style="padding: 28px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td width="52" style="vertical-align: top; padding-right: 16px;">
+<table role="presentation" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 12px;">
+<tr><td style="padding: 12px; text-align: center;">
+<span style="font-size: 22px; font-weight: 800; color: #fff;">1</span>
+</td></tr>
+</table>
+</td>
+<td style="vertical-align: top;">
+<h3 style="margin: 0 0 4px; font-size: 18px; color: #667eea;">AGENTS.md — Static Identity</h3>
+<p style="margin: 0 0 8px; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: #667eea; font-weight: 600;">Ground Truth &mdash; Read-Only</p>
+<p style="margin: 0 0 14px; font-size: 13px; line-height: 1.6; color: #c0c0d0;">Immutable reference. Defines who the agent is who the user is and what infrastructure exists. Updated only when reality actually changes.</p>
+<table role="presentation" cellpadding="0" cellspacing="0">
+<tr><td style="padding: 4px 0;">
+<span style="display: inline-block; font-size: 11px; padding: 3px 10px; background: rgba(102,126,234,0.15); color: #667eea; border-radius: 4px; margin-right: 4px;">Model Identity</span>
+<span style="display: inline-block; font-size: 11px; padding: 3px 10px; background: rgba(102,126,234,0.15); color: #667eea; border-radius: 4px; margin-right: 4px;">User Profile</span>
+<span style="display: inline-block; font-size: 11px; padding: 3px 10px; background: rgba(102,126,234,0.15); color: #667eea; border-radius: 4px; margin-right: 4px;">Architecture</span>
+<span style="display: inline-block; font-size: 11px; padding: 3px 10px; background: rgba(102,126,234,0.15); color: #667eea; border-radius: 4px;">Tool Inventory</span>
+</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td>
+</tr>
+
+<!-- Layer 2 -->
+<tr>
+<td style="padding: 12px 40px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, rgba(0,210,210,0.12) 0%, rgba(0,210,210,0.04) 100%); border: 1px solid rgba(0,210,210,0.25); border-radius: 12px;">
+<tr><td style="padding: 28px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td width="52" style="vertical-align: top; padding-right: 16px;">
+<table role="presentation" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, #00d2d2, #00b4d8); border-radius: 12px;">
+<tr><td style="padding: 12px; text-align: center;">
+<span style="font-size: 22px; font-weight: 800; color: #fff;">2</span>
+</td></tr>
+</table>
+</td>
+<td style="vertical-align: top;">
+<h3 style="margin: 0 0 4px; font-size: 18px; color: #00d2d2;">session_state.json — Working Memory</h3>
+<p style="margin: 0 0 8px; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: #00d2d2; font-weight: 600;">Short-Term &mdash; Updated Each Session</p>
+<p style="margin: 0 0 14px; font-size: 13px; line-height: 1.6; color: #c0c0d0;">Survives shutdown. Tracks recent work, pending tasks, tool health, and ephemeral context. Under 3 KB &mdash; cheap to load.</p>
+<table role="presentation" cellpadding="0" cellspacing="0">
+<tr><td style="padding: 4px 0;">
+<span style="display: inline-block; font-size: 11px; padding: 3px 10px; background: rgba(0,210,210,0.15); color: #00d2d2; border-radius: 4px; margin-right: 4px;">Recent Work</span>
+<span style="display: inline-block; font-size: 11px; padding: 3px 10px; background: rgba(0,210,210,0.15); color: #00d2d2; border-radius: 4px; margin-right: 4px;">Pending Tasks</span>
+<span style="display: inline-block; font-size: 11px; padding: 3px 10px; background: rgba(0,210,210,0.15); color: #00d2d2; border-radius: 4px; margin-right: 4px;">Tool Status</span>
+<span style="display: inline-block; font-size: 11px; padding: 3px 10px; background: rgba(0,210,210,0.15); color: #00d2d2; border-radius: 4px;">Action Items</span>
+</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td>
+</tr>
+
+<!-- Layer 3 -->
+<tr>
+<td style="padding: 12px 40px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, rgba(255,165,0,0.12) 0%, rgba(255,165,0,0.04) 100%); border: 1px solid rgba(255,165,0,0.25); border-radius: 12px;">
+<tr><td style="padding: 28px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td width="52" style="vertical-align: top; padding-right: 16px;">
+<table role="presentation" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, #ffa500, #ff6347); border-radius: 12px;">
+<tr><td style="padding: 12px; text-align: center;">
+<span style="font-size: 22px; font-weight: 800; color: #fff;">3</span>
+</td></tr>
+</table>
+</td>
+<td style="vertical-align: top;">
+<h3 style="margin: 0 0 4px; font-size: 18px; color: #ffa500;">knowledge_graph.yaml — Structured Knowledge</h3>
+<p style="margin: 0 0 8px; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: #ffa500; font-weight: 600;">Long-Term &mdash; Queryable Knowledge Base</p>
+<p style="margin: 0 0 14px; font-size: 13px; line-height: 1.6; color: #c0c0d0;">Typed entities, weighted relationships, attention scores. Inspired by OpenCog Atomspace. Gives the agent a structured mental model instead of a flat text dump.</p>
+<table role="presentation" cellpadding="0" cellspacing="0">
+<tr><td style="padding: 4px 0;">
+<span style="display: inline-block; font-size: 11px; padding: 3px 10px; background: rgba(255,165,0,0.15); color: #ffa500; border-radius: 4px; margin-right: 4px;">Typed Entities</span>
+<span style="display: inline-block; font-size: 11px; padding: 3px 10px; background: rgba(255,165,0,0.15); color: #ffa500; border-radius: 4px; margin-right: 4px;">Weighted Edges</span>
+<span style="display: inline-block; font-size: 11px; padding: 3px 10px; background: rgba(255,165,0,0.15); color: #ffa500; border-radius: 4px; margin-right: 4px;">Attention Scores</span>
+<span style="display: inline-block; font-size: 11px; padding: 3px 10px; background: rgba(255,165,0,0.15); color: #ffa500; border-radius: 4px;">Projects &amp; Goals</span>
+</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td>
+</tr>
+
+<!-- How It Works Diagram -->
+<tr>
+<td style="padding: 30px 40px;">
+<h2 style="margin: 0 0 18px; font-size: 22px; color: #ffffff;">How It Loads at Session Start</h2>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;">
+<tr><td style="padding: 24px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td style="padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.06);">
+<p style="margin: 0; font-size: 13px; color: #667eea;"><strong>&#8595; Read AGENTS.md</strong></p>
+<p style="margin: 4px 0 0 0; font-size: 12px; color: #808090;">"Who am I? Who is my user? What tools do I have?"</p>
+</td>
+</tr>
+<tr>
+<td style="padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+<p style="margin: 0; font-size: 13px; color: #00d2d2;"><strong>&#8595; Read session_state.json</strong></p>
+<p style="margin: 4px 0 0 0; font-size: 12px; color: #808090;">"What was I doing? What's still pending?"</p>
+</td>
+</tr>
+<tr>
+<td style="padding-top: 16px;">
+<p style="margin: 0; font-size: 13px; color: #ffa500;"><strong>&#8595; Query knowledge_graph.yaml</strong></p>
+<p style="margin: 4px 0 0 0; font-size: 12px; color: #808090;">"What projects exist? What matters most?"</p>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+<p style="margin: 14px 0 0; font-size: 12px; color: #666680; font-style: italic;">Total load: ~4,000 tokens out of 256k context. Leaves 252k+ tokens for actual work.</p>
+</td>
+</tr>
+
+<!-- Why It Reduces Hallucinations -->
+<tr>
+<td style="padding: 15px 40px;">
+<h2 style="margin: 0 0 18px; font-size: 22px; color: #ffffff;">What Each Layer Prevents</h2>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden;">
+<tr style="background: rgba(255,255,255,0.04);">
+<td style="padding: 10px 16px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #808090; border-bottom: 1px solid rgba(255,255,255,0.06);">Hallucination</td>
+<td style="padding: 10px 16px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #808090; border-bottom: 1px solid rgba(255,255,255,0.06);">Layer That Fixes It</td>
+</tr>
+<tr>
+<td style="padding: 10px 16px; font-size: 13px; color: #c0c0d0; border-bottom: 1px solid rgba(255,255,255,0.03);">"I forgot who the user is"</td>
+<td style="padding: 10px 16px; font-size: 13px; color: #667eea; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.03);">AGENTS.md</td>
+</tr>
+<tr>
+<td style="padding: 10px 16px; font-size: 13px; color: #c0c0d0; border-bottom: 1px solid rgba(255,255,255,0.03);">"I don't remember what I was working on"</td>
+<td style="padding: 10px 16px; font-size: 13px; color: #00d2d2; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.03);">session_state.json</td>
+</tr>
+<tr>
+<td style="padding: 10px 16px; font-size: 13px; color: #c0c0d0; border-bottom: 1px solid rgba(255,255,255,0.03);">"I invented a tool that doesn't exist"</td>
+<td style="padding: 10px 16px; font-size: 13px; color: #667eea; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.03);">AGENTS.md</td>
+</tr>
+<tr>
+<td style="padding: 10px 16px; font-size: 13px; color: #c0c0d0; border-bottom: 1px solid rgba(255,255,255,0.03);">"I forgot project status"</td>
+<td style="padding: 10px 16px; font-size: 13px; color: #ffa500; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.03);">knowledge_graph.yaml</td>
+</tr>
+<tr>
+<td style="padding: 10px 16px; font-size: 13px; color: #c0c0d0; border-bottom: 1px solid rgba(255,255,255,0.03);">"I duplicated data across files"</td>
+<td style="padding: 10px 16px; font-size: 13px; color: #808090; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.03);">Schema notes in all 3</td>
+</tr>
+<tr>
+<td style="padding: 10px 16px; font-size: 13px; color: #c0c0d0;">"I lost track of priorities"</td>
+<td style="padding: 10px 16px; font-size: 13px; color: #ffa500; font-weight: 600;">Attention weights</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<!-- Footer -->
+<tr>
+<td style="padding: 35px 40px 40px; text-align: center; background: rgba(255,255,255,0.02);">
+<p style="margin: 0 0 8px; font-size: 14px; color: #b0b0c0;">Built by <strong style="color: #667eea;">agent-daryl</strong> &mdash; Qwen 3.6 27B running locally via Ollama</p>
+<p style="margin: 0 0 6px; font-size: 12px; color: #666680;">Inspired by Ben Goertzel's OpenCog Atomspace architecture</p>
+<p style="margin: 12px 0 0; font-size: 11px; color: #444460;">Full documentation available in the framework repo &mdash; see the attached guide</p>
+</td>
+</tr>
+
+</table>
+<!-- /main container -->
+
+</td></tr>
+</table>
+<!-- /outer wrapper -->
+
+</body>
+</html>
